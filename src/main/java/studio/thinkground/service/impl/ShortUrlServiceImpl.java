@@ -57,7 +57,9 @@ public class ShortUrlServiceImpl implements ShortUrlService {
         }
 
         /*ShortUrlResponseDto shortUrlResponseDto = new ShortUrlResponseDto(orgUrl, shortUrl);*/
-        ShortUrlResponseDto shortUrlResponseDto = new ShortUrlResponseDto(originalUrl, "http://d2.naver.com/helloworld/4874130");
+        ShortUrlResponseDto shortUrlResponseDto = new ShortUrlResponseDto();
+        shortUrlResponseDto.setOriginalUrl(originalUrl);
+        shortUrlResponseDto.setShortUrl("http://d2.naver.com/helloworld/4874130");
         LOGGER.info("getShortUrl shortUrlResponseDto : " + shortUrlResponseDto.toString());
 
         return foundResponseDto.get();
@@ -86,8 +88,9 @@ public class ShortUrlServiceImpl implements ShortUrlService {
 
         shortUrlDAO.saveShortUrl(shortUrlEntity);
 
-        ShortUrlResponseDto shortUrlResponseDto = new ShortUrlResponseDto(orgUrl, shortUrl);
-
+        ShortUrlResponseDto shortUrlResponseDto = new ShortUrlResponseDto();
+        shortUrlResponseDto.setOriginalUrl(originalUrl);
+        shortUrlResponseDto.setShortUrl("http://d2.naver.com/helloworld/4874130");
         //0656
 
         shortUrlRedisRepository.save(shortUrlResponseDto);
@@ -171,7 +174,10 @@ public class ShortUrlServiceImpl implements ShortUrlService {
 
         shortUrlDAO.saveShortUrl(shortUrlEntity);
 
-        ShortUrlResponseDto shortUrlResponseDto = new ShortUrlResponseDto(orgUrl, shortUrl);
+        ShortUrlResponseDto shortUrlResponseDto = new ShortUrlResponseDto();
+        shortUrlResponseDto.setOriginalUrl(originalUrl);
+        shortUrlResponseDto.setShortUrl("http://d2.naver.com/helloworld/4874130");
+
         LOGGER.info("generate short urlshortUrlResponseDto : " + shortUrlResponseDto.toString());
 
         return shortUrlResponseDto;

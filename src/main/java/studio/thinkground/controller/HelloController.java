@@ -32,7 +32,7 @@ public class HelloController {
     }
 
     @RequestMapping("/hello1")
-    @MethodAnnotation(name = "MethodHello1", value = "MethodWorld1")
+    @MethodAnnotation(name = "MethodHello1")
     public String hello1() throws NoSuchMethodException {
         Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
         Method method = this.getClass().getMethod("hello1");
@@ -50,6 +50,9 @@ public class HelloController {
 
     @RequestMapping("/hello2")
     public String hello2(@RequestBody @Valid TempDto dto){
+
+        //LOGGER.info("dto : " + dto.getValue());
+        LOGGER.info("call hello2");
         return "Valid value : " + dto.getValue();
     }
 
