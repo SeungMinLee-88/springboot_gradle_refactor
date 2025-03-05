@@ -3,9 +3,8 @@ package studio.thinkground.data.Entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.*;
-import studio.thinkground.data.dto.ProductDTO;
 
+import lombok.*;
 
 @Entity
 @Getter
@@ -15,55 +14,53 @@ import studio.thinkground.data.dto.ProductDTO;
 @Builder
 @ToString
 @Table(name = "product")
-public class ProductEntity extends BaseEntity{
+public class ProductEntity extends BaseEntity {
 
-    @Id
+  @Id Long productId;
 
-    Long productId;
+  String productName;
 
-    String productName;
+  Integer productPrice;
 
-    Integer productPrice;
+  Integer productStock;
 
-    Integer productStock;
+  public Long getProductId() {
+    return productId;
+  }
 
-    public Long getProductId() {
-        return productId;
-    }
+  public void setProductId(Long productId) {
+    this.productId = productId;
+  }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
+  public String getProductName() {
+    return productName;
+  }
 
-    public String getProductName() {
-        return productName;
-    }
+  public void setProductName(String productName) {
+    this.productName = productName;
+  }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
+  public Integer getProductPrice() {
+    return productPrice;
+  }
 
-    public Integer getProductPrice() {
-        return productPrice;
-    }
+  public void setProductPrice(Integer productPrice) {
+    this.productPrice = productPrice;
+  }
 
-    public void setProductPrice(Integer productPrice) {
-        this.productPrice = productPrice;
-    }
+  public Integer getProductStock() {
+    return productStock;
+  }
 
-    public Integer getProductStock() {
-        return productStock;
-    }
-
-    public void setProductStock(Integer productStock) {
-        this.productStock = productStock;
-    }
-/*    public ProductDTO toEntity() {
-        return ProductDTO.builder()
-                .productId(productId)
-                .productName(productName)
-                .productPrice(productPrice)
-                .productStock(productStock)
-                .build();
-        }*/
+  public void setProductStock(Integer productStock) {
+    this.productStock = productStock;
+  }
+  /*    public ProductDTO toEntity() {
+  return ProductDTO.builder()
+          .productId(productId)
+          .productName(productName)
+          .productPrice(productPrice)
+          .productStock(productStock)
+          .build();
+  }*/
 }

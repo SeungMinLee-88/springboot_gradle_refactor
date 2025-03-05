@@ -7,13 +7,12 @@ import org.springframework.context.annotation.Profile;
 
 @Profile("local")
 @Configuration
-public class LocalConfiguration{
-    @Value("${studio.thinkground.loading.message}")
-    private String message;
+public class LocalConfiguration {
+  @Value("${studio.thinkground.loading.message}")
+  private String message;
 
-    @Bean
-    public String getMessage(){
-        return "local profile : " + message;
-    }
-
+  @Bean
+  public String getMessage() {
+    return "local profile : " + message;
+  }
 }

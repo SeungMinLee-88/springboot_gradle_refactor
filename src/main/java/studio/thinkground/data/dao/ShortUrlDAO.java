@@ -4,15 +4,15 @@ import studio.thinkground.data.Entity.ShortUrlEntity;
 
 public interface ShortUrlDAO {
 
-    ShortUrlEntity saveShortUrl(ShortUrlEntity shortUrl);
+  ShortUrlEntity saveShortUrl(ShortUrlEntity shortUrl);
 
-    ShortUrlEntity getShortUrl(String originalUrl);
+  ShortUrlEntity getShortUrl(String originalUrl);
 
-    ShortUrlEntity getOriginalUrl(String shortUrl);
+  ShortUrlEntity getOriginalUrl(String shortUrl);
 
-    ShortUrlEntity updateShortUrl(ShortUrlEntity newShortUrlEntity);
+  ShortUrlEntity updateShortUrl(ShortUrlEntity newShortUrlEntity);
 
-    void deleteByShortUrl(String shortUrl);
+  void deleteByShortUrl(String shortUrl);
 
-    void deleteByOriginalUrl(String originalUrl);
+  void deleteByOriginalUrl(String originalUrl);
 }

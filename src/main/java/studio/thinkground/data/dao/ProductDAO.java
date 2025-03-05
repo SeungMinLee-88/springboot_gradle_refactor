@@ -4,7 +4,7 @@ import studio.thinkground.data.Entity.ProductEntity;
 
 public interface ProductDAO {
 
-    ProductEntity saveProduct(ProductEntity productEntity);
+  ProductEntity saveProduct(ProductEntity productEntity);
 
-    ProductEntity getProduct(Long productId);
+  ProductEntity getProduct(Long productId);
 }

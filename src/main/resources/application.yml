@@ -31,15 +31,15 @@ spring:
 studio:
   thinkground:
     loading:
-      message: '@@ runrunrun old environment @@'
+      message: "@@ runrunrun old environment @@"
 jasypt:
   encryptor:
     bean: jasyptStringEncryptor
 
 
-springdoc:
-  swagger-ui:
-    path=/swagger-ui.html
+    springdoc:
+      swagger-ui:
+        path=/swagger-ui.html
 #springdoc:
 #  api-docs:
 #    path: /api-docs

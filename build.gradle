@@ -5,6 +5,24 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id 'com.diffplug.spotless' version "7.0.2"
+}
+spotless {
+    format("yaml"){
+        target("**.*.yaml", "**/*.yaml")
+        prettier().configFile(".prettierrc")
+    }
+
+    java {
+        removeUnusedImports()
+        googleJavaFormat()
+        importOrder('java|javax', 'jakarta', 'lobbok', "", 'org.springframework', '\\#'
+        ,"studio.thinkground","\\#studio.thinkground")
+        indentWithTabs(2)
+        indentWithSpaces(2)
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
 }
 
 repositories {
@@ -52,4 +70,9 @@ tasks.withType(JavaCompile) {
 
 tasks.withType(Javadoc) {
     options.encoding = 'UTF-8'
+}
+
+task.test {
+    useJUnistPlatform()
+    systemProperties("spring.profiles.active")
 }

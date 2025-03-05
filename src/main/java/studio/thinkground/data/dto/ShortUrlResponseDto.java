@@ -1,12 +1,13 @@
 package studio.thinkground.data.dto;
 
+import java.io.Serializable;
+
 import lombok.*;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
-import java.io.Serializable;
-
-//10:08
+// 10:08
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,26 +16,25 @@ import java.io.Serializable;
 @RedisHash(value = "shortUrl", timeToLive = 60)
 public class ShortUrlResponseDto implements Serializable {
 
-    private static final long SerializableUID = -123123123213L;
+  private static final long SerializableUID = -123123123213L;
 
-    @Id
-    private String originalUrl;
+  @Id private String originalUrl;
 
-    private String shortUrl;
+  private String shortUrl;
 
-    public String getOriginalUrl() {
-        return originalUrl;
-    }
+  public String getOriginalUrl() {
+    return originalUrl;
+  }
 
-    public void setOriginalUrl(String originalUrl) {
-        this.originalUrl = originalUrl;
-    }
+  public void setOriginalUrl(String originalUrl) {
+    this.originalUrl = originalUrl;
+  }
 
-    public String getShortUrl() {
-        return shortUrl;
-    }
+  public String getShortUrl() {
+    return shortUrl;
+  }
 
-    public void setShortUrl(String shortUrl) {
-        this.shortUrl = shortUrl;
-    }
+  public void setShortUrl(String shortUrl) {
+    this.shortUrl = shortUrl;
+  }
 }

@@ -8,17 +8,17 @@ import lombok.*;
 @ToString
 @Builder
 public class NaverUrlDto {
-    private String message;
+  private String message;
 
-    private String code;
+  private String code;
 
-    private Result result;
+  private Result result;
 
-    @Getter
-    @Setter
-    public static class Result{
-        private String hash;
-        private String url;
-        private String orgUrl;
-    }
+  @Getter
+  @Setter
+  public static class Result {
+    private String hash;
+    private String url;
+    private String orgUrl;
+  }
 }
