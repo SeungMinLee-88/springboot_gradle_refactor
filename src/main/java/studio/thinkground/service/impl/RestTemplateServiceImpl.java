@@ -21,20 +21,21 @@ public class RestTemplateServiceImpl implements RestTemplateService {
 
   @Override
   public String getAroundHub() {
+    LOGGER.info("chk 1111111111111111111111111");
     URI uri =
         UriComponentsBuilder.fromUriString("http://localhost:8090")
-            .path("/api/server/aroundhub")
+            .path("/resttemplate/aroundhub")
             .encode()
             .build()
             .toUri();
-
+    LOGGER.info("chk 222222222222222222");
     RestTemplate restTemplate = new RestTemplate();
     ResponseEntity<String> responseEntity = restTemplate.getForEntity(uri, String.class);
-
+    LOGGER.info("chk 333333333333");
     LOGGER.info("status code : {}", responseEntity.getStatusCode());
     LOGGER.info("body : {}", responseEntity.getBody());
 
-    return responseEntity.getBody();
+    return "getAroundHub";
   }
 
   @Override
@@ -42,7 +43,7 @@ public class RestTemplateServiceImpl implements RestTemplateService {
 
     URI uri =
         UriComponentsBuilder.fromUriString("http://localhost:8090")
-            .path("/api/server/name")
+            .path("/resttemplate/name")
             .queryParam("name", "Flature")
             .encode()
             .build()
@@ -61,7 +62,7 @@ public class RestTemplateServiceImpl implements RestTemplateService {
   public String getName2() {
     URI uri =
         UriComponentsBuilder.fromUriString("http://localhost:8090")
-            .path("/api/server/path-variable/{name}")
+            .path("/resttemplate/{name}")
             .encode()
             .build()
             .expand("Flature21321") // 복수의 값을 넣어야할 경우 , 를 추가하여 구분
@@ -80,7 +81,7 @@ public class RestTemplateServiceImpl implements RestTemplateService {
   public ResponseEntity<MemberDTO> postDto() {
     URI uri =
         UriComponentsBuilder.fromUriString("http://localhost:8090")
-            .path("/api/server/member")
+            .path("/resttemplate/member")
             .queryParam("name", "lsmslm")
             .queryParam("email", "aaaa@jjj.com")
             .queryParam("organization", "myhome")
@@ -107,7 +108,7 @@ public class RestTemplateServiceImpl implements RestTemplateService {
   public ResponseEntity<MemberDTO> addHeader() {
     URI uri =
         UriComponentsBuilder.fromUriString("http://localhost:8090")
-            .path("/api/server/add-header")
+            .path("/resttemplate/add-header")
             .encode()
             .build()
             .toUri();
