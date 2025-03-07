@@ -44,6 +44,8 @@ dependencies {
     api libs.com.github.ulisesbocchio.jasypt.spring.boot.starter
     api libs.org.springframework.boot.spring.boot.starter.data.redis
     api libs.org.springframework.boot.spring.boot.devtools
+    implementation group: 'org.springframework', name: 'spring-webflux', version: '6.2.3'
+    implementation group: 'io.projectreactor.netty', name: 'reactor-netty-http', version: '1.2.3'
     testImplementation libs.org.springframework.boot.spring.boot.starter.test
     testImplementation libs.org.junit.jupiter.junit.jupiter
     testImplementation libs.org.junit.jupiter.junit.jupiter.engine

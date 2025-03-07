@@ -55,3 +55,13 @@ jasypt:
 #    doc-expansion: none
 #  paths-to-match:
 #    - /api/**
+aroundhub:
+  client:
+    kakao: ${external_a_baseurl:apikey}
+    api-secret: apiSecret
+    base-url: "http://naver.com"
+    connection-timeout: 100000
+    response-timeout: 100000
+    read-timeout: 100000
+    write-timeout: 100000
+    idle-timeout-seconds: 6000
