@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum ExternalService {
-  KAKAO("kakao");
+  KAKAO("kakao"),
   NAVER("naver");
 
   private final String serviceName;
